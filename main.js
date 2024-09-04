@@ -1,108 +1,53 @@
-let prev = document.getElementById("prev");
-let next = document.getElementById("next");
-let mainpic = document.getElementById("mainpic");
-let info = document.getElementById("info");
-let name = document.getElementById("name");
-let jop = document.getElementById("jop");
-// console.log(prev);
-// console.log(next);
-// console.log(mainpic);
-// console.log(info);
-// console.log(name);
-// console.log(jop);
+document.addEventListener("DOMContentLoaded", () => {
+  const arrows = document.querySelector(".arrows");
+  const mainpic = document.getElementById("mainpic");
+  const info = document.getElementById("info");
+  const name = document.getElementById("name");
+  const jop = document.getElementById("jop");
 
+  const slides = {
+    girl: {
+      image: "images/image-tanya.jpg",
+      text: `“ I’ve been interested in coding for a while but never taken the jump, until now. 
+                    I couldn’t recommend this course enough. I’m now in the job of my dreams and so 
+                    excited about the future. ”`,
+      name: "Tanya Sinclair",
+      job: "UX Engineer",
+    },
+    boy: {
+      image: "images/image-john.jpg",
+      text: `“ If you want to lay the best foundation possible I’d recommend taking this course. 
+                    The depth the instructors go into is incredible. I now feel so confident about 
+                    starting up as a professional developer. ”`,
+      name: "John Tarkpor",
+      job: "Junior Front-end Developer",
+    },
+  };
 
-// pic
-let i = 0;
-let slideImage = ["images/image-tanya.jpg", "images/image-john.jpg"];
+  const keys = Object.keys(slides);
+  let currentIndex = 0;
 
+  function updateContent(index) {
+    const key = keys[index];
+    mainpic.src = slides[key].image;
+    info.innerHTML = slides[key].text;
+    name.innerHTML = slides[key].name;
+    jop.innerHTML = slides[key].job;
+  }
 
-// p
-let p = 0;
+  function changeSlide(direction) {
+    currentIndex = (currentIndex + direction + keys.length) % keys.length;
+    updateContent(currentIndex);
+  }
 
-let ps = [`“ I’ve been interested in coding for a while but never taken the jump, until now. 
-I couldn’t recommend this course enough. I’m now in the job of my dreams and so 
-excited about the future. ”`, `“ If you want to lay the best foundation possible I’d recommend taking this course. 
-The depth the instructors go into is incredible. I now feel so confident about 
-starting up as a professional developer. ”` ];
-
-
-// name
-let n = 0;
-let slideName = ["Tanya Sinclair", "John Tarkpor"];
-
-
-// jop
-let j = 0;
-let slideJop = ["UX Engineer", "Junior Front-end Developer"];
-
-
-
-
-mainpic.src = slideImage[0]
-info.innerHTML = ps[0];
-name.innerHTML = slideName[0];
-jop.innerHTML = slideJop[0];
-
-next.onclick = function(){
-    i++;
-    p++;
-    n++;
-    j++;
-
-    if(i > slideImage.length -1){
-       i= slideImage.length -1;
+  arrows.addEventListener("click", (event) => {
+    if (event.target.id === "next") {
+      changeSlide(1);
+    } else if (event.target.id === "prev") {
+      changeSlide(-1);
     }
-    mainpic.src = slideImage[i]
+  });
 
-    if(p > ps.length -1){
-        p= ps.length -1;
-     }
-     info.innerHTML = ps[p];
-    
-
-     if(n > slideName.length -1){
-        n= slideName.length -1;
-     }
-     name.innerHTML = slideName[n];
-
-
-     if(j > slideName.length -1){
-        j= slideName.length -1;
-     }
-     jop.innerHTML = slideJop[j];
-
-}
-
-
-prev.onclick = function(){
-
-    i--;
-    p--;
-    n--;
-    j--;
-    if(i < 0){
-        i= 0;
-    }
-    mainpic.src = slideImage[i]
-
-
-    if(p < 0){
-        p= 0;
-    }
-    info.innerHTML = ps[p];
-
-
-    if(n < 0){
-        n= 0;
-    }
-    name.innerHTML = slideName[n];
-
-
-    if(j < 0){
-        j= 0;
-    }
-    jop.innerHTML = slideJop[j];
-    
-
-}
+  // Initialize with the first slide
+  updateContent(currentIndex);
+});

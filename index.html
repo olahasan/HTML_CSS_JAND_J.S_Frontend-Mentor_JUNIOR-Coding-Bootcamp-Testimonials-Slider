@@ -1,49 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- next meta, tells the browser to use the most modern version, standards-compliant rendering mode available -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
-  
-  <link rel="stylesheet" href="css/main.css"/>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
 
-</head>
-<body>
-<div class="all">
-  <div class="container">
+    <link rel="stylesheet" href="css/main.css" />
 
-    <div class="left">
-      
-        <div class="text">
-          <p id="info">
-          </p>
-           <span id="name"></span>
-           <span id="jop"></span>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="all">
+      <div class="container">
+        <div class="left">
+          <div class="text">
+            <p id="info"></p>
+            <span id="name"></span>
+            <span id="jop"></span>
+          </div>
         </div>
-      
-    </div>
-    <div class="right">
-    
-      <div class="image">
-        <img  alt="pic" id="mainpic"/>
+        <div class="right">
+          <div class="image">
+            <img alt="girl or boy picture " id="mainpic" />
+          </div>
+          <div class="arrows">
+            <img
+              loading="lazy"
+              src="images/icon-prev.svg"
+              alt="pic"
+              id="prev"
+            />
+            <img
+              loading="lazy"
+              src="images/icon-next.svg"
+              alt="pic"
+              id="next"
+            />
+          </div>
+        </div>
       </div>
-      <div class="arrows">
-        <img src="images/icon-prev.svg" alt="pic" id="prev"/>
-        <img src="images/icon-next.svg" alt="pic" id="next"/>
-      </div>
-   
     </div>
-  </div>
-</div> 
-  
-  <script src="main.js"></script>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>
-
