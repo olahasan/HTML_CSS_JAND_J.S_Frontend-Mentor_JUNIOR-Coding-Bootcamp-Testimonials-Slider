@@ -36,7 +36,11 @@ body {
 }
 
 .all {
-  margin: 20px auto;
+/*   margin: 20px auto; */
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .all .container {
   display: flex;
