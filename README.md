@@ -72,7 +72,7 @@ Through this project, I learned how to:
 - Implement a responsive design using CSS Flexbox and media queries.
 - Use JavaScript to dynamically update content and handle user interactions.
 - Optimize images with lazy loading for better performance.
-- Enhance accessibility by using appropriate HTML attributes and ARIA roles.
+- Enhance accessibility by using appropriate HTML attributes.
 
 ### Continued Development
 
